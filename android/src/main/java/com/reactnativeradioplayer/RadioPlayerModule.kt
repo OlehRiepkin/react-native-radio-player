@@ -43,6 +43,13 @@ class RadioPlayerModule(reactContext: ReactApplicationContext) : ReactContextBas
       player.addListener(this)
     }
   }
+  
+  @ReactMethod
+  fun setVolume(volume: Float) {
+    UiThreadUtil.runOnUiThread {
+      player.volume = volume
+    }
+  }
 
   @ReactMethod
   fun radioURL(uri: String) {
