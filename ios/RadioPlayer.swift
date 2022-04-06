@@ -81,6 +81,11 @@ class RadioPlayer: RCTEventEmitter, FRadioPlayerDelegate {
     func stop(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         player.stop()
     }
+  
+    @objc(setVolume:withResolver:withRejecter:)
+    func setVolume(volume: NSNumber, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+        player.volume = volume.floatValue
+    }
     
     func computeAndSendStateEvent() {
         let previousState = self.state
