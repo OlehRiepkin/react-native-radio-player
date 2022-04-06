@@ -5,6 +5,7 @@ type RadioPlayerType = {
   radioURLWithMetadataSeparator(url: string, metadataSeparator: string): Promise<void>;
   play(): Promise<void>;
   stop(): Promise<void>;
+  setVolume(volume: number): Promise<void>;
 };
 
 export type RadioPlayerMetadata = {
