@@ -60,12 +60,14 @@ class RadioPlayer: RCTEventEmitter, FRadioPlayerDelegate {
     @objc(radioURL:withResolver:withRejecter:)
     func radioURL(url: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         radioURL = URL(string: url)
+        resolve(1)
     }
     
     @objc(radioURLWithMetadataSeparator:metadataSeparator:withResolver:withRejecter:)
     func radioURL(url: String, withMetadataSeparator: String, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         self.metadataSeparator = withMetadataSeparator
         radioURL = URL(string: url)
+        resolve(1)
     }
     
     @objc(play:withRejecter:)
@@ -75,16 +77,19 @@ class RadioPlayer: RCTEventEmitter, FRadioPlayerDelegate {
             return
         }
         player.radioURL = radioURL
+        resolve(1)
     }
     
     @objc(stop:withRejecter:)
     func stop(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         player.stop()
+        resolve(1)
     }
   
     @objc(setVolume:withResolver:withRejecter:)
     func setVolume(volume: NSNumber, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         player.volume = volume.floatValue
+        resolve(1)
     }
     
     func computeAndSendStateEvent() {
