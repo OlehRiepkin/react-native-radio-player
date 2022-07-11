@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
   
 
   s.dependency "React"
-  s.dependency "FRadioPlayer", :git => "https://github.com/OlehRiepkin/FRadioPlayer.git"
+  s.dependency "FRadioPlayer", :podspec => "https://github.com/OlehRiepkin/FRadioPlayer/blob/master/FRadioPlayer.podspec"
 end
